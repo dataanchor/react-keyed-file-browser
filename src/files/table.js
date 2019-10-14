@@ -9,10 +9,11 @@ import { fileSize } from './utils.js'
 
 class RawTableFile extends BaseFile {
   render() {
+    console.log('--ss', this.props)
     const {
       isDragging, isDeleting, isRenaming, isOver, isSelected,
       action, url, browserProps, connectDragPreview,
-      depth, size, modified,
+      depth, size, modified, active,
     } = this.props
 
     const icon = browserProps.icons[this.getFileType()] || browserProps.icons.File
@@ -89,6 +90,7 @@ class RawTableFile extends BaseFile {
             {draggable}
           </div>
         </td>
+        <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td>
         <td className="size">{fileSize(size)}</td>
         <td className="modified">
           {typeof modified === 'undefined' ? '-' : Moment(modified, 'x').fromNow()}

@@ -6,9 +6,9 @@
   "scripts": {
     "publish-demo": "git branch -D gh-pages; git push origin --delete gh-pages; git checkout -b gh-pages; cd demo-site; yarn; npm run build; cd ..; git add .; git add -f demo-site/dist; git add -f demo-site/node_modules/uptick-demo-site/dist; git commit -m \"Demo site build\"; git push origin gh-pages; git checkout master; git push origin `git subtree split --prefix demo-site gh-pages`:gh-pages --force;",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-js": "./node_modules/webpack/bin/webpack.js",
-    "build-css": "./node_modules/node-sass/bin/node-sass src/browser.sass dist/react-keyed-file-browser.css",
-    "build": "npm run build-js; npm run build-css",
+    "build-js": "node ./node_modules/webpack/bin/webpack.js",
+    "build-css": "node ./node_modules/node-sass/bin/node-sass src/browser.sass dist/react-keyed-file-browser.css",
+    "build": "npm run build-js && npm run build-css",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
@@ -34,8 +34,10 @@
     "classnames": "^2.2.3",
     "moment": "^2.17.0",
     "prop-types": "^15.5.8",
+    "react": "^16.10.2",
     "react-dnd": "^2.1.4",
-    "react-dnd-html5-backend": "^2.1.2"
+    "react-dnd-html5-backend": "^2.1.2",
+    "react-dom": "^16.10.2"
   },
   "peerDependencies": {
     "react": "0.14.x || 15.x || 16.x",
@@ -64,8 +66,6 @@
     "eslint-plugin-standard": "^4.0.0",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.11.0",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.1",

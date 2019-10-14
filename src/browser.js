@@ -30,6 +30,7 @@ function getItemProps(file, browserProps) {
     isRenaming: browserProps.activeAction === 'rename' && browserProps.actionTarget === file.key,
     isDeleting: browserProps.activeAction === 'delete' && browserProps.actionTarget === file.key,
     isDraft: !!file.draft,
+    active: file.active,
   }
 }
 
