@@ -9,7 +9,6 @@ import { fileSize } from './utils.js'
 
 class RawTableFile extends BaseFile {
   render() {
-    console.log('--ss', this.props)
     const {
       isDragging, isDeleting, isRenaming, isOver, isSelected,
       action, url, browserProps, connectDragPreview,
