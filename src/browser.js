@@ -648,6 +648,7 @@ class RawFileBrowser extends React.Component {
             {...thisItemProps}
             browserProps={browserProps}
             {...fileRendererProps}
+            path={file.path}
           />
         )
       } else {
@@ -658,6 +659,7 @@ class RawFileBrowser extends React.Component {
               {...thisItemProps}
               browserProps={browserProps}
               {...folderRendererProps}
+              path={null}
             />
           )
         }
@@ -769,6 +771,7 @@ class RawFileBrowser extends React.Component {
           header = (
             <thead>
               <this.props.headerRenderer
+                path={this.state.nameFilter}
                 {...headerProps}
                 {...this.props.headerRendererProps}
               />

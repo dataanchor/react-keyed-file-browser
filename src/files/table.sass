@@ -1,0 +1,26 @@
+.marquee
+  width: 455px
+  margin: 0 auto
+  box-sizing: border-box
+  overflow: hidden
+
+  span
+    width: 100%
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    display: inline-block
+    animation-play-state: pause
+    
+    &:hover
+      animation: marquee 10s linear infinite
+      width: auto
+
+
+
+@keyframes marquee
+  0%
+    transform: translate(0, 0)
+
+  100%
+    transform: translate(-100%, 0)

@@ -18,7 +18,7 @@ class Filter extends React.Component {
         ref="filter"
         ref={el => { this.filterRef = el }}
         type="search"
-        placeholder="Filter files"
+        placeholder="Filter files (File names are case sensitive)"
         value={this.props.value}
         onChange={this.handleFilterChange}
       />

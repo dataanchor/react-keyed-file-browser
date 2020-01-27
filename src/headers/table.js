@@ -16,6 +16,7 @@ class RawTableHeader extends React.Component {
     connectDropTarget: PropTypes.func,
     isOver: PropTypes.bool,
     isSelected: PropTypes.func,
+    path: PropTypes.any,
 
     browserProps: PropTypes.shape({
       createFiles: PropTypes.func,
@@ -37,7 +38,8 @@ class RawTableHeader extends React.Component {
         })}
       >
         <th>File</th>
-        <th className="active" style={{ textAspangn: 'center' }}>
+        {this.props.path ? <th className="path" style={{ textAlign: 'center' }}>Path</th> : null}
+        <th className="active" style={{ textAlign: 'center' }}>
           Active <a data-tip data-for="info"><span>&#9432;</span></a>
           <ReactTooltip id="info" effect="solid" place="right">
             <div style={{ fontSize: 12, display: 'flex', flexDirection: 'column' }}>

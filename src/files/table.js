@@ -6,13 +6,14 @@ import { NativeTypes } from 'react-dnd-html5-backend'
 
 import BaseFile, { BaseFileConnectors } from './../base-file.js'
 import { fileSize } from './utils.js'
+import './table.sass'
 
 class RawTableFile extends BaseFile {
   render() {
     const {
       isDragging, isDeleting, isRenaming, isOver, isSelected,
       action, url, browserProps, connectDragPreview,
-      depth, size, modified, active,
+      depth, size, modified, active, path,
     } = this.props
 
     const icon = browserProps.icons[this.getFileType()] || browserProps.icons.File
@@ -89,6 +90,7 @@ class RawTableFile extends BaseFile {
             {draggable}
           </div>
         </td>
+        { path ? <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> {path} </span> </p> </td> : null }
         <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td>
         <td className="size">{fileSize(size)}</td>
         <td className="modified">
