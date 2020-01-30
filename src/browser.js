@@ -649,6 +649,7 @@ class RawFileBrowser extends React.Component {
             browserProps={browserProps}
             {...fileRendererProps}
             path={file.path}
+            search={this.state.nameFilter}
           />
         )
       } else {

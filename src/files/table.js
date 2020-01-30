@@ -13,7 +13,7 @@ class RawTableFile extends BaseFile {
     const {
       isDragging, isDeleting, isRenaming, isOver, isSelected,
       action, url, browserProps, connectDragPreview,
-      depth, size, modified, active, path,
+      depth, size, modified, active, path, search,
     } = this.props
 
     const icon = browserProps.icons[this.getFileType()] || browserProps.icons.File
@@ -90,7 +90,7 @@ class RawTableFile extends BaseFile {
             {draggable}
           </div>
         </td>
-        { path ? <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> {path} </span> </p> </td> : null }
+        { path && search ? <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> {path} </span> </p> </td> : null }
         <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td>
         <td className="size">{fileSize(size)}</td>
         <td className="modified">
