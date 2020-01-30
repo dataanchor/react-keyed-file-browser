@@ -90,7 +90,7 @@ class RawTableFile extends BaseFile {
             {draggable}
           </div>
         </td>
-        { path && search ? <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> {path} </span> </p> </td> : null }
+        <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> { path && search ? path : '' } </span> </p> </td>
         <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td>
         <td className="size">{fileSize(size)}</td>
         <td className="modified">

@@ -38,7 +38,7 @@ class RawTableHeader extends React.Component {
         })}
       >
         <th>File</th>
-        {this.props.path ? <th className="path" style={{ textAlign: 'center' }}>Path</th> : null}
+        <th className="path" style={{ textAlign: 'center' }}>{this.props.path ? 'Path' : ''}</th>
         <th className="active" style={{ textAlign: 'center' }}>
           Active <a data-tip data-for="info"><span>&#9432;</span></a>
           <ReactTooltip id="info" effect="solid" place="right">
