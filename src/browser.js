@@ -41,7 +41,7 @@ class RawFileBrowser extends React.Component {
     showActionBar: PropTypes.bool.isRequired,
     canFilter: PropTypes.bool.isRequired,
     noFilesMessage: PropTypes.string,
-
+    search: PropTypes.string,
     group: PropTypes.func.isRequired,
     sort: PropTypes.func.isRequired,
 
@@ -154,6 +154,12 @@ class RawFileBrowser extends React.Component {
     }
 
     window.addEventListener('click', this.handleGlobalClick)
+  }
+
+  componentDidUpdate(prevProp) {
+    if (prevProp.search !== this.props.search) {
+      this.updateFilter(this.props.search)
+    }
   }
 
   componentWillUnmount() {
