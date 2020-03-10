@@ -91,7 +91,7 @@ class RawTableFile extends BaseFile {
           </div>
         </td>
         <td style={{ textAlign: 'left' }}> <p className="marquee" > <span> { path && search ? path : '' } </span> </p> </td>
-        <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td>
+        {/* <td className="active" style={{ textAlign: 'center' }}>{active ? 'Yes' : 'No'}</td> */}
         <td className="size">{fileSize(size)}</td>
         <td className="modified">
           {typeof modified === 'undefined' ? '-' : Moment(modified, 'x').fromNow()}

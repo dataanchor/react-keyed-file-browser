@@ -39,7 +39,7 @@ class RawTableHeader extends React.Component {
       >
         <th>File</th>
         <th className="path" style={{ textAlign: 'center' }}>{this.props.path ? 'Path' : ''}</th>
-        <th className="active" style={{ textAlign: 'center' }}>
+        {/* <th className="active" style={{ textAlign: 'center' }}>
           Active <a data-tip data-for="info"><span>&#9432;</span></a>
           <ReactTooltip id="info" effect="solid" place="right">
             <div style={{ fontSize: 12, display: 'flex', flexDirection: 'column' }}>
@@ -52,7 +52,7 @@ class RawTableHeader extends React.Component {
               <span>&#9679; The file is actively used by the user.</span>
             </div>
           </ReactTooltip>
-        </th>
+        </th> */}
         <th className="size">Size</th>
         <th className="modified">Last Modified</th>
       </tr>
